@@ -4,10 +4,12 @@ import { withRouter } from 'react-router';
 import { favouriteArticle } from '../actions/article';
 import {
   ContainerDiv,
+  ContainerIn,
   ContentDiv,
   ItemDiv,
   AnchorDiv,
   Heading,
+  ItemImg,
   FavouriteLink,
 } from './styles';
 
@@ -39,14 +41,16 @@ class ArticlesList extends Component {
     let { collection } = this.props;
     return (
       <ContainerDiv>
-        <Heading>List Of Article's</Heading>
-        <FavouriteLink onClick={this.navigateToFavouriteArticlePage}>View Favourite Article's</FavouriteLink>
+        <Heading>List Of Articles</Heading>
+        <FavouriteLink onClick={this.navigateToFavouriteArticlePage}>View Favourite Articles</FavouriteLink>
+        <ContainerIn>
         {collection.map((item) => {
           return (
             <ContentDiv key={item.id}>
               <ItemDiv>
                 {item.title}
               </ItemDiv>
+              <ItemImg src={item.urlToImage} />
               <AnchorDiv onClick={() => this.navigateToDetailsPage(item.id)}> 
                 Veiw Details 
               </AnchorDiv>
@@ -56,6 +60,7 @@ class ArticlesList extends Component {
             </ContentDiv>
           );
         })}
+        </ContainerIn>
       </ContainerDiv>
     );
   }

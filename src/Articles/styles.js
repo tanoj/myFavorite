@@ -6,6 +6,11 @@ export const ContainerDiv = styled.div`
   flex-direction: column;
 `;
 
+export const ContainerIn = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
 export const Heading = styled.h2`
   text-align: center;
 `;
@@ -19,8 +24,9 @@ export const FavouriteLink = styled.p`
 `;
 
 export const ContentDiv = styled.div`
+  flex: 1 0 21%; /* explanation below */
+  margin: 5px;
   background-color: #f1f1f1;
-  margin: 10px;
   padding: 10px;
   text-align: center;
   border: 1px solid #ccc;
@@ -28,16 +34,17 @@ export const ContentDiv = styled.div`
 `;
 
 export const ItemDiv = styled.div`
-  line-height: 75px;
-  font-size: 18px;
+  line-height: 25px;
+  font-size: 12px;
 `;
 
 export const AnchorDiv = styled.div`
   text-decoration: underline;
-  color: red;
+  color: #000;
   cursor: pointer;
-  font-size: 14px;
-  padding-bottom: 10px;
+  font-size: 12px;
+  font-weight: 5px;
+  padding-bottom: 5px;
 `;
 
 export const Cards = styled.div`
@@ -56,6 +63,9 @@ export const CardItem = styled.div`
 
 export const CardImg = styled.img`
   max-width: 100%;
+`;
+export const ItemImg = styled.img`
+  max-width: 220px;
 `;
 
 export const CardContent = styled.div`
